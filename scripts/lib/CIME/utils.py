@@ -19,6 +19,7 @@ logger = logging.getLogger(__name__)
 
 
 def import_from_file(name, file_path):
+    import importlib.machinery
     loader = importlib.machinery.SourceFileLoader(name, file_path)
 
     spec = importlib.util.spec_from_loader(loader.name, loader)
